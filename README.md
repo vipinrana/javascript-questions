@@ -87,3 +87,46 @@ console.log(cpObj);
 <summary>Answer</summary>
   The answer is <em>{id: 1, name: 'John Doe'}</em>. It's because object <b>obj</b> has property <b>age</b> of enumerable <em>false</em>. Object.assign() only copies enumerated own properties from sources.
 </details>
+
+<hr/>
+
+**4.** <span><b>What will be the output of below code?</b></span>
+
+```javascript
+let obj = Object.defineProperties({}, {
+    id: {
+        value: 1,
+        writable: true,
+        enumerable: true,
+        configurable: true
+    },
+    name: {
+        value: 'John Doe',
+        writable: false,
+        enumerable: true,
+        configurable: true
+    }
+});
+
+obj.name = 'Jack Barker';
+
+let cpObj = Object.assign({}, obj);
+
+cpObj.name = 'Bruce Williams';
+
+console.log(obj.name, cpObj.name);
+```
+
+<span><b>Options:-</b></span>
+
+- `John Doe, John Doe`
+- `John Doe, Bruce Williams`
+- `Jack Barker, Bruce Williams`
+- `Jack Barker, John Doe`
+
+<details>
+<summary>Answer</summary>
+  The answer is <em>John Doe, Bruce Williams</em>. It's because Object.assign() only copies enumerated own properties from sources not the property attributes(writable, configurable).
+</details>
+
+
