@@ -45,3 +45,45 @@ console.log(x);
 <summary>Answer</summary>
  The answer is <em>null</em>. It's because in second line we reassign the variable <b>x</b> with null.
 </details>
+
+<hr/>
+
+**3.** <span><b>What will be the output of below code?</b></span>
+
+```javascript
+let obj = Object.defineProperties({}, {
+    id: {
+        value: 1,
+        writable: true,
+        enumerable: true,
+        configurable: true
+    },
+    name: {
+        value: 'John Doe',
+        writable: true,
+        enumerable: true,
+        configurable: true
+    },
+    age: {
+        value: 25,
+        writable: true,
+        enumerable: false,
+        configurable: true
+    },
+});
+
+let cpObj = Object.assign({}, obj);
+
+console.log(cpObj);
+```
+
+<span><b>Options:-</b></span>
+
+- `{id: 1, name: 'John Doe', age: 25}`
+- `{id: 1, name: 'John Doe'}`
+- `{id: 1, age: 25}`
+
+<details>
+<summary>Answer</summary>
+  The answer is <em>{id: 1, name: 'John Doe'}</em>. It's because object <b>obj</b> has property <b>age</b> of enumerable <em>false</em>. Object.assign() only copies enumerated own properties from sources.
+</details>
