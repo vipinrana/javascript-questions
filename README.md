@@ -21,5 +21,5 @@ console.log(delete x);
 
 <details>
 <summary>Answer</summary>
- The answer is <em>true</em>. The reason is once the callMe() function is called, the variable <b>x</b> will treat as a window variable and also note that variable <b>x</b> is without any declaration keyword(var, let or const).
+ The answer is <em>true</em>. The reason is once the callMe() function is called, the variable <b>x</b> will treat as a window property and also note that variable <b>x</b> is without any declaration keyword(var, let or const). You can access using <b>window.x</b> unless you didn't delete it.
 </details>
