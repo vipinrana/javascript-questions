@@ -51,6 +51,26 @@ console.log(x);
 **3.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
+(function (arg) {
+    console.log(typeof arg);
+})(() => 'Hello World!');
+```
+
+<span><b>Options:-</b></span>
+
+- `Function`
+- `String`
+
+<details>
+<summary>Answer</summary>
+  The answer is <em>Function</em>. We are passing the parameter as the arrow function to the IIFE function as argument.
+</details>
+
+<hr/>
+
+**4.** <span><b>What will be the output of below code?</b></span>
+
+```javascript
 let obj = Object.defineProperties({}, {
     id: {
         value: 1,
@@ -90,7 +110,7 @@ console.log(cpObj);
 
 <hr/>
 
-**4.** <span><b>What will be the output of below code?</b></span>
+**5.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
 let obj = Object.defineProperties({}, {
