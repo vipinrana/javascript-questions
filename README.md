@@ -29,6 +29,38 @@ console.log(delete x);
 **2.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
+var obj = {};
+
+// using regular property initialization
+obj.prop1 = "delete prop1";
+
+// using Object.defineproperty()
+Object.defineProperty(obj, 'prop2', {
+    value: "delete prop2"
+});
+
+console.log(delete obj.prop1);
+console.log(delete obj.prop2); 
+```
+
+<span><b>Options:-</b></span>
+
+- `true`  `false`
+- `false` `false`
+- `true`  `true`
+- `false` `true`
+
+
+<details>
+<summary>Answer</summary>
+ The answer is <em>true</em>, <em>false</em>. When you initialize property using Object.defineProperty(), it is non-configurable. It means you cannot delete the non-configurable property. Use the Object.getOwnPropertyDescriptor() to list the object property descriptors.
+</details>
+
+<hr/>
+
+**3.** <span><b>What will be the output of below code?</b></span>
+
+```javascript
 let x = (() => 'foo bar')();
 
 ((xarg) => x = null)(x);
@@ -48,7 +80,7 @@ console.log(x);
 
 <hr/>
 
-**3.** <span><b>What will be the output of below code?</b></span>
+**4.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
 (function (arg) {
@@ -68,7 +100,7 @@ console.log(x);
 
 <hr/>
 
-**4.** <span><b>What will be the output of below code?</b></span>
+**5.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
 let obj = Object.defineProperties({}, {
@@ -110,7 +142,7 @@ console.log(cpObj);
 
 <hr/>
 
-**5.** <span><b>What will be the output of below code?</b></span>
+**6.** <span><b>What will be the output of below code?</b></span>
 
 ```javascript
 let obj = Object.defineProperties({}, {
