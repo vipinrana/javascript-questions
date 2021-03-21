@@ -180,5 +180,37 @@ console.log(obj.name, cpObj.name);
 <summary>Answer</summary>
   The answer is <em>John Doe, Bruce Williams</em>. It's because Object.assign() only copies enumerated own properties from sources not the property attributes(writable, configurable).
 </details>
+<hr/>
+
+**7.** <span><b>What will be the output of below code?</b></span>
+
+```javascript
+let user = {
+	greetText: 'Hi',
+	name: 'John Doe',
+
+};
+
+Object.defineProperty(user, 'greet', {
+	get() {
+		return `${this.greetText}! ${this.name}`;
+	},
+	value: `Hey! ${this.name}`
+});
+
+console.log(user.greet);
+```
+
+<span><b>Options:-</b></span>
+
+- `Hi! John Doe`
+- `Hey! John Doe`
+- `undefined`
+- `TypeError: Invalid property descriptor`
+
+<details>
+<summary>Answer</summary>
+  The answer is <em>TypeError: Invalid property descriptor</em>. When using accessor descriptor <em>get or set</em>, we cannot add the data desccriptor <em>value</em> or <em>writable</em> with them. Either add accessor descriptor <em>get, set</em>  or data descriptor <em>value, writable</em>.
+</details>
 
 
