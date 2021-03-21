@@ -210,7 +210,7 @@ console.log(user.greet);
 
 <details>
 <summary>Answer</summary>
-  The answer is <em>TypeError: Invalid property descriptor</em>. When using accessor descriptor <em>get or set</em>, we cannot add the data desccriptor <em>value</em> or <em>writable</em> with them. Either add accessor descriptor <em>get, set</em>  or data descriptor <em>value, writable</em>.
+  The answer is <em>TypeError: Invalid property descriptor</em>. When using accessor descriptor <em>get or set</em>, we cannot add the data descriptor <em>value</em> or <em>writable</em> with them. Either add accessor descriptor <em>get, set</em>  or data descriptor <em>value, writable</em>.
 </details>
 
 
